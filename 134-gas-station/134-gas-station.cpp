@@ -12,7 +12,6 @@ public:
         }
         int ans=-1;
         
-        vector<int>dp(n);
         int tot=0;
         
         for(int i=0;i<n;i++){
