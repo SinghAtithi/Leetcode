@@ -20,7 +20,7 @@ public:
         vis.clear();
         graph.clear();
         int ans = 0;
-        for (auto &v : stones)
+        for (auto v : stones)
         {
             pair<int, int> x;
             x.first = v[0];
@@ -30,7 +30,7 @@ public:
             graph[{v[0], -1}].push_back(x);
             graph[{x}].push_back({v[0], -1});
         }
-        for(auto &v:stones){
+        for(auto v:stones){
             pair<int,int>x;
             x.first=v[0];
             x.second=v[1];
