@@ -10,7 +10,7 @@ public:
         if(n.first!=-1 && n.second!=-1){
             cnt++;
         }
-        for(auto x:graph[n]){
+        for(auto &x:graph[n]){
             if(!vis[x])
                 dfs(x);
         }
@@ -20,7 +20,7 @@ public:
         vis.clear();
         graph.clear();
         int ans = 0;
-        for (auto v : stones)
+        for (auto &v : stones)
         {
             pair<int, int> x;
             x.first = v[0];
