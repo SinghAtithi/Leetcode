@@ -17,8 +17,6 @@ public:
     }
     
     int removeStones(vector<vector<int>>& stones) {
-        vis.clear();
-        graph.clear();
         int ans = 0;
         for (auto v : stones)
         {
