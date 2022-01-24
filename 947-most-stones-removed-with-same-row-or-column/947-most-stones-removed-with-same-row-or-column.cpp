@@ -30,23 +30,13 @@ public:
             graph[{v[0], -1}].push_back(x);
             graph[{x}].push_back({v[0], -1});
         }
-        for (int i = 0; i < 10001;i++){
-            if(!vis[{-1,i}]){
-                cnt = 0;
-                dfs({-1, i});
-            }
-            if (cnt > 0)
-            {
-                ans += cnt - 1;
-                cnt=0;
-            }
-            if(!vis[{i,-1}]){
-                cnt = 0;
-                dfs({i, -1});
-            }
-            if (cnt > 0)
-            {
-                ans += cnt - 1;
+        for(auto &v:stones){
+            pair<int,int>x;
+            x.first=v[0];
+            x.second=v[1];
+            if(!vis[x]){
+                dfs(x);
+                if(cnt>0)ans+=cnt-1;
                 cnt=0;
             }
         }
