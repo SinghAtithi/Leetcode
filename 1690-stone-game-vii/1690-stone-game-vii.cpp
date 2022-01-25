@@ -1,7 +1,6 @@
 class Solution {
 public:
     int n;
-    // bool flag;
     int dp[1001][1001];
     int r(int i, int j, vector<int>&v, int sum){
         if(j<i)return 0;
@@ -9,11 +8,9 @@ public:
             return dp[i][j];
         }
         int ans;
-        if(true){
-            int q=abs(sum-v[i]-r(i+1,j,v,sum-v[i]));
-            int qq=abs(sum-v[j]-r(i,j-1,v,sum-v[j]));
-            ans=max(q,qq);
-        }
+        int q=abs(sum-v[i]-r(i+1,j,v,sum-v[i]));
+        int qq=abs(sum-v[j]-r(i,j-1,v,sum-v[j]));
+        ans=max(q,qq);
         return dp[i][j]= ans;
         
     }
