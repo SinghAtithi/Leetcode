@@ -1,7 +1,7 @@
 class Solution {
 public:
     int n;
-    bool flag;
+    // bool flag;
     int dp[1001][1001];
     int r(int i, int j, vector<int>&v, int sum){
         if(j<i)return 0;
@@ -9,18 +9,11 @@ public:
             return dp[i][j];
         }
         int ans;
-        if((j-i+1)%2==(n%2)){
+        if(true){
             int q=abs(sum-v[i]-r(i+1,j,v,sum-v[i]));
             int qq=abs(sum-v[j]-r(i,j-1,v,sum-v[j]));
             ans=max(q,qq);
         }
-        else{
-            int q=abs(sum-v[i]-r(i+1,j,v,sum-v[i]));
-            int qq=abs(sum-v[j]-r(i,j-1,v,sum-v[j]));
-            ans=max(q,qq);
-            // ans*=-1;
-        }
-        // cout<<ans<<" ";
         return dp[i][j]= ans;
         
     }
