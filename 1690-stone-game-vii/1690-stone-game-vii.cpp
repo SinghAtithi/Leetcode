@@ -23,8 +23,8 @@ public:
             }
         }
         int sum=0;
-        for(auto &x:stones){
-            sum+=x;
+        for(int i=0;i<n;i++){
+            sum+=stones[i];
         }
         int ans=r(0,n-1,stones,sum);
         return ans;
