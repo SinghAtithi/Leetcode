@@ -31,19 +31,19 @@ public:
         int m=vv.size();
         while(i<n && j<m){
             if(v[i]<vv[j]){
-                ans.push_back(v[i]);
+                ans.emplace_back(v[i]);
                 i++;
             }
             else{
-                ans.push_back(vv[j]);
+                ans.emplace_back(vv[j]);
                 j++;
             }
         }
         for(;i<n;i++){
-            ans.push_back(v[i]);
+            ans.emplace_back(v[i]);
         }
         for(;j<m;j++){
-            ans.push_back(vv[j]);
+            ans.emplace_back(vv[j]);
         }
         return ans;
     }
