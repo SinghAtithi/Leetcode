@@ -15,7 +15,7 @@ public:
     void dfs(TreeNode* &root, vector<int>&v){
         if(root==NULL)return;
         dfs(root->left,v);
-        v.push_back(root->val);
+        v.emplace_back(root->val);
         dfs(root->right,v);
     }
     
