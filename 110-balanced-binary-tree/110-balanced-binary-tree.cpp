@@ -15,7 +15,7 @@ public:
     bool ans;
     
     int dfs(TreeNode* root){
-        if(root == NULL)
+        if(root == NULL || ans == false)
             return 0;
         int leftSubTree = dfs(root->left);
         int rightSubTree = dfs(root->right);
