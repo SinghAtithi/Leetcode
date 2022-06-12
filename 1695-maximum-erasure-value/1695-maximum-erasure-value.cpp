@@ -6,7 +6,7 @@ public:
         int i = 0, j = 0;
         int curr = 0;
         int len = nums.size();
-        unordered_map<int,int>mp;
+        int mp[10002]{};
         
         for(; i < len && j < len;){
             if(mp[nums[j]] == 0){
