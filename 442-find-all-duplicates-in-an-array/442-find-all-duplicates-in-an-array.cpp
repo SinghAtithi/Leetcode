@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<int> findDuplicates(vector<int>& nums) {
-        
+        ios_base::sync_with_stdio(false); cin.tie(NULL);  cout.tie(NULL);
         vector<int> ans;
         int len = nums.size();
         
