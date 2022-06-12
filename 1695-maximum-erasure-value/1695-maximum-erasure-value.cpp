@@ -9,15 +9,14 @@ public:
         unordered_map<int,int>mp;
         
         while(j < len && i < len){
-            int x = nums[j];
-            if(mp[x] == 0){
-                curr += x;
+            if(mp[nums[j]] == 0){
+                curr += nums[j];
                 ans = max(ans, curr);
-                mp[x]++;
+                mp[nums[j]]++;
                 j++;
             }
             else{
-                while(i < j && nums[i] != x){
+                while(i < j && nums[i] != nums[j]){
                     mp[nums[i]]--;
                     curr -= nums[i];
                     i++;
