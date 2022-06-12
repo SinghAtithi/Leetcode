@@ -17,7 +17,7 @@ public:
             }
             else{
                 while(i < j && nums[i] != nums[j]){
-                    mp[nums[i]]--;
+                    mp.erase(nums[i]);
                     curr -= nums[i];
                     i++;
                 }             
