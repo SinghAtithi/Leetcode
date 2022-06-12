@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<int> spiralOrder(vector<vector<int>>& mat) {
-        
+        ios_base :: sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
         int row = mat.size();
         int col = mat[0].size();
         int dir = 0;
