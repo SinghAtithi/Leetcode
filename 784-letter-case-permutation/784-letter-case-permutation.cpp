@@ -2,6 +2,9 @@ class Solution {
 public:
     
     void r(int ind, string s, string ss, vector<string> &ans){
+        
+        ios_base:: sync_with_stdio(false); cin.tie(NULL);cout.tie(NULL);
+        
         if(ind == s.size()){
             ans.push_back(ss);
             return;
