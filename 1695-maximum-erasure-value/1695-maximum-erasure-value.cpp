@@ -8,7 +8,7 @@ public:
         int len = nums.size();
         unordered_map<int,int>mp;
         
-        while(j < len && i < len){
+        for(; i < len && j < len;){
             if(mp[nums[j]] == 0){
                 curr += nums[j];
                 ans = max(ans, curr);
