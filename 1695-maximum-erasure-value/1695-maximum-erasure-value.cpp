@@ -6,23 +6,23 @@ public:
         int i = 0, j = 0;
         int curr = 0;
         int len = nums.size();
-        set<int> st;
+        unordered_map<int,int>mp;
         
         while(j < len && i < len){
             int x = nums[j];
-            if(st.find(x) == st.end()){
+            if(mp[x] == 0){
                 curr += x;
                 ans = max(ans, curr);
-                st.insert(x);
+                mp[x]++;
                 j++;
             }
             else{
                 while(i < j && nums[i] != x){
-                    st.erase(nums[i]);
+                    mp[nums[i]]--;
                     curr -= nums[i];
                     i++;
-                }
-                st.erase(nums[i]);
+                }             
+                mp[nums[i]]--;
                 curr -= nums[i];
                 i++;
             }
