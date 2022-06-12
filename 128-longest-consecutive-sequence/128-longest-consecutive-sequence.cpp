@@ -1,7 +1,7 @@
 class Solution {
 public:
     int longestConsecutive(vector<int>& nums) {
-        // ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+        ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
         unordered_map<int,bool>mp;        
         int len = nums.size();
 
@@ -16,14 +16,12 @@ public:
             int x = nums[i];
             int y = x - 1;
             while(mp[x] == true){
-                // cout<<x<<" ";
                 res++;
                 mp[x] = false;
                 x++;
             }
             while(mp[y] == true){
                 res++;
-                // cout<<y<<" ";
                 mp[y] = false;
                 y--;
             }
