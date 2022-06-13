@@ -2,6 +2,8 @@ class Solution {
 public:
     int minimumTotal(vector<vector<int>>& triangle) {
         
+        ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+        
         int ans;
         int row = triangle.size();
         
