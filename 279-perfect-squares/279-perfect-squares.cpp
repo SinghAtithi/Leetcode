@@ -1,6 +1,9 @@
 class Solution {
 public:
     int numSquares(int n) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        cout.tie(NULL);
         
         vector<int> dp(n+1, INT_MAX);
         dp[0] = 0;
