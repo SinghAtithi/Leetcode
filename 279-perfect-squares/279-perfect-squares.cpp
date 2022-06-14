@@ -5,11 +5,12 @@ public:
         cin.tie(NULL);
         cout.tie(NULL);
         
-        vector<int> dp(n+1, INT_MAX);
+        int dp[n+1];
         dp[0] = 0;
         
         for(int i = 1; i <= n; i++){
             int x = 1;
+            dp[i] = INT_MAX;
             while(true){
                 if(i - (x * x) < 0)
                     break;
