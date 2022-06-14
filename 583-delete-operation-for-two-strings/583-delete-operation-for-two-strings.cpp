@@ -21,6 +21,7 @@ public:
     }
     
     int minDistance(string word1, string word2) {
+        ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
         vector<vector<int>>dp(word1.size(),vector<int>(word2.size(),-1));
         return rec(0, 0, word1, word2, dp);
     }
