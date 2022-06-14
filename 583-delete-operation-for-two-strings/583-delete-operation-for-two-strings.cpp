@@ -1,7 +1,7 @@
 class Solution {
 public:
     
-    int rec(int ind1, int ind2, string word1, string word2, vector<vector<int>>& dp){
+    int rec(int ind1, int ind2, string &word1, string &word2, vector<vector<int>>& dp){
         
         if(ind1 == word1.size() && ind2 == word2.size())
             return 0;
