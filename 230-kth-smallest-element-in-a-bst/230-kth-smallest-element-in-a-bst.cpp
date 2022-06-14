@@ -12,20 +12,22 @@
 class Solution {
 public:
     
-    void dfs(TreeNode* root, vector<int>& ans){
+    void dfs(TreeNode* root, int &ans, int &k){
         if(root == NULL)
             return;
-        dfs(root->left, ans);
-        ans.push_back(root->val);
-        dfs(root->right, ans);
+        dfs(root->left, ans, k);
+        k--;
+        if(k == 0)
+            ans = root->val;
+        dfs(root->right, ans, k);
     }
     
     int kthSmallest(TreeNode* root, int k) {
         
         ios_base:: sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
         
-        vector<int>ans;
-        dfs(root, ans);
-        return ans[k - 1];
+        int ans;
+        dfs(root, ans, k);
+        return ans;
     }
 };
