@@ -26,6 +26,8 @@ public:
     
     int findTargetSumWays(vector<int>& nums, int target) {
         
+        ios_base :: sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+        
         if(nums.size() == 1)
             return (abs(nums[0]) == abs(target)) ? 1 : 0;
         
