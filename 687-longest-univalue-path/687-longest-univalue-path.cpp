@@ -12,7 +12,7 @@
 class Solution {
 public:
     
-    int dfs(TreeNode* root, int &ans){
+    int dfs(TreeNode* &root, int &ans){
         
         if(root == NULL)
             return 0;
