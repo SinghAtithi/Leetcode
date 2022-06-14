@@ -21,6 +21,9 @@ public:
     }
     
     int kthSmallest(TreeNode* root, int k) {
+        
+        ios_base:: sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+        
         vector<int>ans;
         dfs(root, ans);
         return ans[k - 1];
