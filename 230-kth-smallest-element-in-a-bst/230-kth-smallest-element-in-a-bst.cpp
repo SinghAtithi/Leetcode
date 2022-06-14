@@ -13,7 +13,7 @@ class Solution {
 public:
     
     void dfs(TreeNode* root, int &ans, int &k){
-        if(root == NULL)
+        if(root == NULL || ans != -1)
             return;
         dfs(root->left, ans, k);
         k--;
@@ -26,7 +26,7 @@ public:
         
         // ios_base:: sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
         
-        int ans;
+        int ans = -1;
         dfs(root, ans, k);
         return ans;
     }
