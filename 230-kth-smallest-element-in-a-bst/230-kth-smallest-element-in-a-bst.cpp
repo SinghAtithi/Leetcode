@@ -24,7 +24,7 @@ public:
     
     int kthSmallest(TreeNode* root, int k) {
         
-        // ios_base:: sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+        ios_base:: sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
         
         int ans = -1;
         dfs(root, ans, k);
