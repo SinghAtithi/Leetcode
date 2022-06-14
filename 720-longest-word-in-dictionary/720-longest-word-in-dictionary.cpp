@@ -9,6 +9,10 @@ public:
     
     string longestWord(vector<string>& words) {
         
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        cout.tie(NULL);
+        
         string ans = "";
         set<string>st;
         sort(words.begin(),words.end(),comp);
