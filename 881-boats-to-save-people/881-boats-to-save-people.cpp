@@ -2,16 +2,18 @@ class Solution {
 public:
     int numRescueBoats(vector<int>& people, int limit) {
         
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        cout.tie(NULL);
+        
         int len = people.size();
         sort(people.begin(),people.end());
-        reverse(people.begin(),people.end());
         multiset<int> st;
         int ans = 0;
         st.insert(1e9 + 7);
         
-        for(int i = 0; i < len; i++){
+        for(int i = len - 1; i >= 0; i--){
             auto x = st.lower_bound(people[i]);
-            // cout<<people[i]<<" "<<*x<<"\n";
             if(*x != (1e9 + 7)){
                 st.erase(x);
             }
