@@ -2,7 +2,7 @@ class Solution {
 public:
     vector<vector<string>> suggestedProducts(vector<string>& prod, string p) {
         
-        map<string,set<string>>mp;
+        unordered_map<string,set<string>>mp;
         
         int len = prod.size();
         for(int i = 0; i < len; i++){
