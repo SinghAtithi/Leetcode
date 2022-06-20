@@ -3,7 +3,7 @@ public:
     
     int dp[501];
     
-    int r(int ind, vector<int>& arr, int k){
+    int r(int ind, vector<int>& arr, int &k){
         if(ind == arr.size()){
             return 0;
         }
