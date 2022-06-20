@@ -9,22 +9,21 @@ public:
     
     int scheduleCourse(vector<vector<int>>& courses) {
         
-        priority_queue<vector<int>> pq;
+        priority_queue<int> pq;
         int curr = 0;
         sort(courses.begin(), courses.end(), comp);
         int len = courses.size();
         for(int i = 0; i < len; i++){
             if(curr + courses[i][0] <= courses[i][1]){
-                // cout<<curr<<" "<<courses[i][0]<<" "<<courses[i][1]<<"\n";
-                pq.push(courses[i]);
+                pq.push(courses[i][0]);
                 curr += courses[i][0];
             }
             else if(pq.size() > 0){
-                if(pq.top()[0] > courses[i][0] && (curr - pq.top()[0] + courses[i][0] < curr)){
-                    int temp = curr - pq.top()[0];
+                if(pq.top() > courses[i][0] && (curr - pq.top() + courses[i][0] < curr)){
+                    int temp = curr - pq.top();
                     if(temp + courses[i][0] <= courses[i][1]){
                         pq.pop();
-                        pq.push(courses[i]);
+                        pq.push(courses[i][0]);
                         curr = temp + courses[i][0];
                     }
                 }
