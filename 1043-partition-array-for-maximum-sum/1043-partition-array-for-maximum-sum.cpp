@@ -11,7 +11,6 @@ public:
         if(dp[ind] != -1)
             return dp[ind];
         
-        int x = 0;
         int maxi = INT_MIN;
         int ans = 0;
         
