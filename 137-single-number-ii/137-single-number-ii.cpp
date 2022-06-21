@@ -16,6 +16,7 @@ public:
             if(cnt % 3 != 0){
                 ans += (1<<i);
             }
+            // t*=2;
         }
         return ans;
     }
