@@ -19,6 +19,8 @@ public:
             for(int i = 0; i < len; i++){
                 int z = *lower_bound(nums[i].begin(), nums[i].end(), x);
                 maxi = max(maxi , z);
+                if(maxi - mini > ans[1] - ans[0])
+                    break;
             }
             if(maxi - x < ans[1] - ans[0])
                 ans[1] = maxi, ans[0] = mini;
