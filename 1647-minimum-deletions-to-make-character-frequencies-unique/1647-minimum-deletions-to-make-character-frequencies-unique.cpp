@@ -9,7 +9,7 @@ public:
             freq[s[i] - 'a']++;
         }
         
-        set<int> st;
+        unordered_set<int> st;
         
         for(int i = 0; i < 26; i++){
             if(freq[i] == 0)
