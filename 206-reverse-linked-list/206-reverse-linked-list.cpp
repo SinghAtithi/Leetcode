@@ -16,10 +16,8 @@ public:
             ListNode* next = head->next;
             head->next = prev;
             prev = head;
-            if(!next)
-                break;
             head = next;
         }
-        return head;
+        return prev;
     }
 };
