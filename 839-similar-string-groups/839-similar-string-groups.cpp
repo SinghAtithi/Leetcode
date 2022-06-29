@@ -1,9 +1,9 @@
 class Solution {
 public:
-        map<string,string> par;
-        map<string, int> power;
+        map<int,int> par;
+        map<int, int> power;
     
-    string findPar(string &s){
+    int findPar(int &s){
         if(par[s] == s)
             return s;
         else return findPar(par[s]);
@@ -23,9 +23,9 @@ public:
             
         
         int len = strs.size();
-        for(auto &s: strs){
-            par[s] = s;
-            power[s] = 1;
+        for(int i = 0; i < len; i++){
+            power[i] = 1;
+            par[i] = i;
         }
         int ans = 0;
         
@@ -33,10 +33,10 @@ public:
             for(int j = i + 1; j < len ; j++){
                 string a = strs[i], b = strs[j];
                 if(f(a, b)){
-                    string A = findPar(a);
-                    string B = findPar(b);
-                    int x = power[a];
-                    int y = power[b];
+                    int A = findPar(i);
+                    int B = findPar(j);
+                    int x = power[i];
+                    int y = power[j];
                     if(A == B){
                         power[A]++;
                     }
@@ -52,9 +52,9 @@ public:
                 }
             }
         }
-        set<string>st;
+        set<int>st;
         for(int i = 0; i < len; i++){
-            st.insert(findPar(strs[i]));
+            st.insert(findPar(i));
         }
         return st.size();
     }
