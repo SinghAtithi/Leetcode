@@ -1,12 +1,11 @@
 class Solution {
 public:
-        map<int,int> par;
-        map<int, int> power;
+        
     
-    int findPar(int &s){
+    int findPar(int &s, vector<int> &par){
         if(par[s] == s)
             return s;
-        else return findPar(par[s]);
+        else return findPar(par[s], par);
     }
     
     bool f(string &a, string &b){
@@ -23,6 +22,7 @@ public:
             
         
         int len = strs.size();
+        vector<int>par(len), power(len);
         for(int i = 0; i < len; i++){
             power[i] = 1;
             par[i] = i;
@@ -33,8 +33,8 @@ public:
             for(int j = i + 1; j < len ; j++){
                 string a = strs[i], b = strs[j];
                 if(f(a, b)){
-                    int A = findPar(i);
-                    int B = findPar(j);
+                    int A = findPar(i, par);
+                    int B = findPar(j, par);
                     int x = power[i];
                     int y = power[j];
                     if(A == B){
@@ -54,7 +54,7 @@ public:
         }
         set<int>st;
         for(int i = 0; i < len; i++){
-            st.insert(findPar(i));
+            st.insert(findPar(i, par));
         }
         return st.size();
     }
