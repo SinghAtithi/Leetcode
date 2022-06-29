@@ -16,7 +16,7 @@ public:
         
         vector<int> taken(len, 0);
         
-        for(auto &x: people){
+        for(vector<int> &x: people){
             int z = 0;
             for(int i = 0; i < len; i++){
                 if(taken[i] == 0 && z == x[1]){
