@@ -3,7 +3,7 @@ public:
         map<string,string> par;
         map<string, int> power;
     
-    string findPar(string s){
+    string findPar(string &s){
         if(par[s] == s)
             return s;
         else return findPar(par[s]);
