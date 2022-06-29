@@ -52,7 +52,7 @@ public:
                 }
             }
         }
-        set<int>st;
+        unordered_set<int>st;
         for(int i = 0; i < len; i++){
             st.insert(findPar(i, par));
         }
