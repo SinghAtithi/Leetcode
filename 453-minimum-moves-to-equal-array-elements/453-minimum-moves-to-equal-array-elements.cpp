@@ -4,10 +4,12 @@ public:
         
         int len = nums.size();
         int ans = 0;
-        sort(nums.begin(), nums.end());
-        for(int i = 1; i < len;i++){
-            ans += nums[i] - nums[0];
+        long long sum = 0;
+        int mini = INT_MAX;
+        for(int i = 0; i < len;i++){
+            mini = min(mini , nums[i]);
+            sum += nums[i];
         }
-        return ans;
+        return sum - (mini * len);
     }
 };
