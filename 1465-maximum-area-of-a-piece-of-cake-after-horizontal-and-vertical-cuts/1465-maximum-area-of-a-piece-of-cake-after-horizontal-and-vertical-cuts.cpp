@@ -14,7 +14,9 @@ public:
     }
     
     int maxArea(int h, int w, vector<int>& horizontalCuts, vector<int>& verticalCuts) {
-        
+        ios::sync_with_stdio(false);
+        cin.tie(NULL);
+        cout.tie(NULL);
         long long maxH = maxDist(horizontalCuts, h);
         long long maxW = maxDist(verticalCuts, w);
         return (maxH * maxW) % MOD;
