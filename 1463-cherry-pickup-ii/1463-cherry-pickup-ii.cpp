@@ -1,7 +1,7 @@
 class Solution {
 public:
     
-    int dp[71][71][71];
+    int dp[70][70][70];
     
     int maxPickup(int ax,int ay, int by, int &rows, int &cols,           vector<vector<int>>& grid){
         
@@ -25,12 +25,16 @@ public:
     
     int cherryPickup(vector<vector<int>>& grid) {
         
+        ios::sync_with_stdio(false);
+        cin.tie(NULL);
+        cout.tie(NULL);
+        
         int rows = grid.size();
         int cols = grid[0].size();
         
-        for(int i = 0; i < 71; i++){
-            for(int j = 0; j < 71; j++){
-                for(int k = 0; k < 71; k++)dp[i][j][k] = -1;
+        for(int i = 0; i < 70; i++){
+            for(int j = 0; j < 70; j++){
+                for(int k = 0; k < 70; k++)dp[i][j][k] = -1;
             }
         }
         
