@@ -42,6 +42,9 @@ public:
     }
 
     int minCost(vector<int>& houses, vector<vector<int>>& cost, int m, int n, int target) {
+        ios::sync_with_stdio(false);
+        cin.tie(NULL);
+        cout.tie(NULL);
         memset(memo,-1,sizeof(memo));
         int val=rec(houses,cost,target,m,n,0,0,0);
         if(val==1e7)
