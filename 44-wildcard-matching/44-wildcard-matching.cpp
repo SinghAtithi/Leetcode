@@ -7,7 +7,7 @@ public:
             return true;
         if(sInd == s.size()){
             if(pInd < p.size() && p[pInd] == '*')
-                return rec(sInd, pInd + 1, s, p, dp);
+                return dp[sInd][pInd] = rec(sInd, pInd + 1, s, p, dp);
             return false;
         }
         
