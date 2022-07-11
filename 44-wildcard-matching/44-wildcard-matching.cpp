@@ -30,6 +30,8 @@ public:
     }
     
     bool isMatch(string s, string p) {
+        ios::sync_with_stdio(false);
+        cin.tie(NULL);cout.tie(NULL);
         vector<vector<int>>dp(s.size() + 1, vector<int>(p.size() + 1, -1));
         int ans = rec(0, 0, s, p, dp);
         return (ans == 0) ? false : true;
