@@ -1,26 +1,59 @@
 class Solution {
 public:
-    bool check(int i, vector<int>& ds, vector<int>& arr, int target){
-        if(i>=arr.size()){
-            for(auto& x:ds) {
-                if(x!=target) return false; 
-            }
+    // solution is the same as '698. Partition to K Equal Sum Subsets'
+    bool makesquare(vector<int>& matchsticks) {
+        int n = matchsticks.size();
+
+        int sum = 0;
+        for (const int& matchstick: matchsticks)
+        {
+            sum += matchstick;
+        }
+
+        if (sum % 4 != 0)
+        {
+            return false;
+        }
+
+        int targetSum = sum / 4;
+
+        vector<bool> usedValues(n, false);
+
+        sort(matchsticks.begin(), matchsticks.end(), greater<int>());
+
+        return backtrack(targetSum, matchsticks, usedValues, 0, 4, 0);
+    }
+
+private:
+    bool backtrack(int targetSum, vector<int>& nums, vector<bool>& usedValues, int index, int remainingBuckets, int currentBucketSum)
+    {
+        if (remainingBuckets == 0)
+        {
             return true;
         }
-        for(int j=0;j<4;j++){
-            if(arr[i]+ds[j]<=target){
-                ds[j]+=arr[i];
-                if(check(i+1,ds,arr,target)) return true;
-                ds[j]-=arr[i];
-            }
+
+        if (currentBucketSum == targetSum)
+        {
+            return backtrack(targetSum, nums, usedValues, 0, remainingBuckets-1, 0);
         }
+
+        for (int j = index; j < nums.size(); j++)
+        {
+            if (usedValues[j] || currentBucketSum + nums[j] > targetSum || (j > 0 && nums[j] == nums[j-1] && !usedValues[j-1]))
+            {
+                continue;
+            }
+
+            usedValues[j] = true;
+
+            if (backtrack(targetSum, nums, usedValues, j+1, remainingBuckets, currentBucketSum + nums[j]))
+            {
+                return true;
+            }
+
+            usedValues[j] = false;
+        }
+
         return false;
-    }
-    bool makesquare(vector<int>& arr) {
-        int sum=accumulate(arr.begin(),arr.end(),0);
-        if(sum%4!=0) return false;
-        vector<int> ds(4);
-        sort(arr.rbegin(),arr.rend()); 
-        return check(0,ds,arr,sum/4);
     }
 };
