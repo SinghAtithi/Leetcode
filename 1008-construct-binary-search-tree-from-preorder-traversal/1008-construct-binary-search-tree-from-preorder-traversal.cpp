@@ -12,7 +12,7 @@
 class Solution {
 public:
     
-    TreeNode* build(vector<int>preOrder, int &ind, int maxi){
+    TreeNode* build(vector<int>&preOrder, int &ind, int maxi){
         
         if(ind >= preOrder.size() || preOrder[ind] >= maxi)
             return NULL;
