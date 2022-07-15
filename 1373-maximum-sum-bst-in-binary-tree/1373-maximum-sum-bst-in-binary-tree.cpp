@@ -54,9 +54,7 @@ public:
         res.mini = min({root->val, left.mini, right.mini});
         
         if(res.good)ans = max(ans, res.val);
-        
-        // cout<<root->val<<" "<<res.mini<<" "<<res.maxi<<"\n";
-        
+               
         return res;          
         
     }
