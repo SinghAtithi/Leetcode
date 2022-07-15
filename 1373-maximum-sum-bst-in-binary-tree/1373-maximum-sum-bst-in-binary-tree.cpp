@@ -21,7 +21,7 @@ class Solution {
     
     
 public:
-    node dfs(TreeNode* root, int &ans){
+    node dfs(TreeNode* &root, int &ans){
         if(root == NULL){
             node res;
             res.good = true;
