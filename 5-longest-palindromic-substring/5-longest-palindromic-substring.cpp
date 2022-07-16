@@ -1,5 +1,16 @@
 class Solution {
 public:
+    
+    
+    void create(int i , int j , string &s, string &ans){
+        if(j - i + 1 > ans.size()){
+                ans = "";
+                for(int k = i; k <= j; k++){
+                    ans += s[k];
+                }
+            }
+    }
+    
     string longestPalindrome(string s) {
         
         int len = s.size();
@@ -15,12 +26,7 @@ public:
                 i--, j++;
             }
             i++, j--;
-            if(j - i + 1 > ans.size()){
-                ans = "";
-                for(int k = i; k <= j; k++){
-                    ans += s[k];
-                }
-            }
+            create(i, j , s, ans);
         }
         for(int center = 0; center < len; center++){
             int temp = 0;
@@ -32,12 +38,7 @@ public:
                 i--, j++;
             }
             i++, j--;
-            if(j - i + 1 > ans.size()){
-                ans = "";
-                for(int k = i; k <= j; k++){
-                    ans += s[k];
-                }
-            }
+            create(i, j, s, ans);
         }
         
         return ans;
