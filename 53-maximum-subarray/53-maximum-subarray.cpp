@@ -6,7 +6,7 @@ public:
         int len = nums.size();
         int temp = 0;
         
-        for(auto num : nums){
+        for(int &num : nums){
             temp += num;
             ans = max({ans, temp, num});
             if(temp < 0)
